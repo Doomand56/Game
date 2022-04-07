@@ -1,5 +1,37 @@
 * {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
-    background-color: beige;
+    box-sizing: border-box;
+    transition: all 0.2s;
+}
+body {
+    font-family:  monospace;
+}
+.wrapper {
+    width: 800px;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: seashell;
+    text-align: center;
+    border: 1px solid silver;
+    box-shadow: 2px 2px 20px silver;
+}
+h1, h2 {
+    margin-bottom: 20px;
+}
+button {
+    padding: 5px;
+}
+.inp {
+    padding: 5px;
+    width: 100px;
+}
+.conteiner-button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.conteiner-output {
+    display: flex;
+    justify-content: center;
 }
