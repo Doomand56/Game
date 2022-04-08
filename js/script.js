@@ -10,19 +10,28 @@ function getRandomIntInclusive(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+function resultRandom() {
+    return getRandomIntInclusive(0, 10);
+}
+
 buttonOne.onclick = () => {
-    outComp.innerHTML = getRandomIntInclusive(0, 10);
+    outComp.textContent = resultRandom();
+    console.log(resultRandom());
 }
 buttonTwo.onclick = () => {
-    outMy.innerHTML = input.value;
+    outMy.textContent = input.value;
 }
 
-console.log(outComp);
-console.log(outMy);
-
-
 document.querySelector('.btn-3').onclick = () => {
-    if (outComp.value === outMy.value) {
-        console.log('Good!');
+    if (resultRandom() == input.value) {
+        document.querySelector('.conteiner-out-2').innerHTML += '<p>Very good!</p>';
+        console.log(resultRandom());
+        console.log(+input.value);
+    }
+    else {
+        document.querySelector('.conteiner-out-2').innerHTML += '<p>False!</p>';
+        console.log(resultRandom());
+        console.log(+input.value);
     }
 }
