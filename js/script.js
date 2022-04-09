@@ -19,31 +19,33 @@ let result = resultRandom();
 
 buttonOne.onclick = () => {
     console.log(result);
+    buttonOne.setAttribute("disabled", "disabled");
 }
 
 buttonTree.onclick = () => {
     if (result == +input.value) {
-        console.log('Greate!');
         out.innerHTML = 
         `<p>Ваше число: ${input.value}</p>
         <p>ПК число: ${result}</p>
-        // <p>Вы выиграли!</p>`;
-        buttonOne.setAttribute("disabled", "disabled");
+        <p>Вы выиграли!</p>`;
+
         input.setAttribute("disabled", "disabled");
         buttonTree.innerHTML = 'Сыграем ещё раз?';
+
         buttonTree.onclick = () => {
             location.reload();
         }
     }
     else {
-        console.log('False!');
         out.innerHTML = 
         `<p>Ваше число: ${input.value}</p>
         <p>ПК число: ${result}</p>
         <p>Вы проиграли!</p>`;
+
         buttonOne.setAttribute("disabled", "disabled");
         input.setAttribute("disabled", "disabled");
         buttonTree.innerHTML = 'Сыграем ещё раз?';
+
         buttonTree.onclick = () => {
             location.reload();
         }
