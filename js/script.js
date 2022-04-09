@@ -1,9 +1,9 @@
 let buttonOne = document.querySelector('.btn-1');
 let buttonTwo = document.querySelector('.btn-2');
+let buttonTree = document.querySelector('.btn-3');
 let input = document.querySelector('.inp');
 
-let outComp = document.querySelector('.comp-num');
-let outMy = document.querySelector('.my-num');
+let out = document.querySelector('.conteiner-out-2');
 
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
@@ -15,23 +15,37 @@ function resultRandom() {
     return getRandomIntInclusive(0, 10);
 }
 
+let result = resultRandom();
+
 buttonOne.onclick = () => {
-    outComp.textContent = resultRandom();
-    console.log(resultRandom());
-}
-buttonTwo.onclick = () => {
-    outMy.textContent = input.value;
+    console.log(result);
 }
 
-document.querySelector('.btn-3').onclick = () => {
-    if (resultRandom() == input.value) {
-        document.querySelector('.conteiner-out-2').innerHTML += '<p>Very good!</p>';
-        console.log(resultRandom());
-        console.log(+input.value);
+buttonTree.onclick = () => {
+    if (result == +input.value) {
+        console.log('Greate!');
+        out.innerHTML = 
+        `<p>Ваше число: ${input.value}</p>
+        <p>ПК число: ${result}</p>
+        // <p>Вы выиграли!</p>`;
+        buttonOne.setAttribute("disabled", "disabled");
+        input.setAttribute("disabled", "disabled");
+        buttonTree.innerHTML = 'Сыграем ещё раз?';
+        buttonTree.onclick = () => {
+            location.reload();
+        }
     }
     else {
-        document.querySelector('.conteiner-out-2').innerHTML += '<p>False!</p>';
-        console.log(resultRandom());
-        console.log(+input.value);
+        console.log('False!');
+        out.innerHTML = 
+        `<p>Ваше число: ${input.value}</p>
+        <p>ПК число: ${result}</p>
+        <p>Вы проиграли!</p>`;
+        buttonOne.setAttribute("disabled", "disabled");
+        input.setAttribute("disabled", "disabled");
+        buttonTree.innerHTML = 'Сыграем ещё раз?';
+        buttonTree.onclick = () => {
+            location.reload();
+        }
     }
 }

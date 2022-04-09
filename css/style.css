@@ -21,10 +21,11 @@ h1, h2 {
 }
 button {
     padding: 5px;
+    width: 250px;
 }
 .inp {
     padding: 5px;
-    width: 100px;
+    width: 250px;
 }
 .conteiner-button {
     display: flex;
@@ -34,4 +35,8 @@ button {
 .conteiner-input {
     display: flex;
     justify-content: center;
+}
+.conteiner-out-2 {
+    margin-top: 20px;
+    font-size: 18px;
 }
