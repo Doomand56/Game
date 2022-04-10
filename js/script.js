@@ -27,7 +27,7 @@ buttonTree.onclick = () => {
         out.innerHTML = 
         `<p>Ваше число: ${input.value}</p>
         <p>ПК число: ${result}</p>
-        <p>Вы выиграли!</p>`;
+        <p class="true">Вы выиграли!</p>`;
 
         input.setAttribute("disabled", "disabled");
         buttonTree.innerHTML = 'Сыграем ещё раз?';
@@ -40,7 +40,7 @@ buttonTree.onclick = () => {
         out.innerHTML = 
         `<p>Ваше число: ${input.value}</p>
         <p>ПК число: ${result}</p>
-        <p>Вы проиграли!</p>`;
+        <p class="false">Вы проиграли!</p>`;
 
         buttonOne.setAttribute("disabled", "disabled");
         input.setAttribute("disabled", "disabled");
@@ -51,3 +51,10 @@ buttonTree.onclick = () => {
         }
     }
 }
+
+
+function borderColor() {
+    buttonTree.style.backgroundColor = 
+    `rgb(${getRandomIntInclusive(200,255)}, ${getRandomIntInclusive(200,255)}, ${getRandomIntInclusive(200,255)})`
+}
+setInterval(borderColor, 1000);

@@ -50,6 +50,16 @@ button {
 .conteiner-out-2 {
     margin-top: 20px;
 }
+.false {
+    font-size: 20px;
+    font-weight: 800;
+    color: brown;
+}
+.true {
+    font-size: 20px;
+    font-weight: 800;
+    color: green;
+}
 
 
 /* МЕДИА ЗАПРОСЫ */
